@@ -1,0 +1,53 @@
+let a = 0;
+let w = 200;
+let h = 200;
+
+function setup() {
+  createCanvas(400, 400);
+  background(100);
+  rectMode(CENTER);
+  colorMode(HSB);
+}
+
+function draw() {
+  
+  if (h <= 400) {
+    if (keyIsDown(RIGHT_ARROW)) {
+      h += 4;
+    }
+  }
+  
+  if (w <= 400) {
+    if (keyIsDown(UP_ARROW)) {
+      w += 4;
+    }
+  }
+  
+  if (a <= 99) {
+    if (keyIsDown(90)) {
+      a += 3;
+    }
+  }
+
+  if (a >= 0 && h >= 0 && w >= 0) {
+
+   clear();
+   noStroke();
+   fill(50, 100, 100);
+   rect(height / 2, width / 2, h, w, a);
+
+   if (keyIsDown(LEFT_ARROW)) {
+      h -= 4;
+   }
+    
+   if (keyIsDown(DOWN_ARROW)) {
+      w -= 4;
+   }
+    
+   if (keyIsDown(191)) {
+      a -= 3;
+   }
+  
+ }
+
+}
